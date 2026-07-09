@@ -1,0 +1,35 @@
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+chatenv/
+venv/
+
+# Git
+.git
+.gitignore
+
+# VS Code
+.vscode/
+
+# Environment File
+.env
+
+# Python Cache
+.pytest_cache/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Uploaded PDFs (Optional)
+app/uploads/*
+
+# Chroma Database (Optional)
+chroma_db/
+
+# README
+README.md

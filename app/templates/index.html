@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AI PDF Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ===========================
+             HEADER
+    ============================ -->
+
+    <header class="header">
+
+        <div class="header-left">
+
+            <div class="logo">
+
+                🤖
+
+            </div>
+
+            <div>
+
+                <h1>
+
+                    AI PDF Assistant
+
+                </h1>
+
+                <p>
+
+                    Private AI Assistant for Your Documents
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <span> Local AI</span>
+
+            <span> Private</span>
+
+            <span> Fast</span>
+
+            <span> Llama 3.2</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ===========================
+            MAIN LAYOUT
+    ============================ -->
+
+    <div class="dashboard">
+
+                <!-- ===========================
+                LEFT SIDEBAR
+        ============================ -->
+
+        <aside class="sidebar">
+
+            <!-- Upload Card -->
+
+            <div class="card">
+
+                <div class="card-title">
+
+                    📄 Upload PDF
+
+                </div>
+
+                <p class="card-description">
+
+                    Upload your document and start an AI conversation.
+
+                </p>
+
+                <!-- Upload Area -->
+
+                <div class="upload-area">
+
+                    <input
+                        type="file"
+                        id="pdfFile"
+                        accept=".pdf">
+
+                    <p>
+
+                        Drop your PDF here
+
+                    </p>
+
+                    <small>
+
+                        or browse from your computer
+
+                    </small>
+
+                    <div class="upload-info">
+
+                       PDF only • Max 50 MB
+
+                    </div>
+
+                    <label for="pdfFile" class="browse-btn">
+
+                       Browse Files
+
+                    </label>
+
+                </div>
+
+                <button id="uploadBtn">
+
+                    Upload Document
+
+                </button>
+
+                <p
+                    id="uploadStatus"
+                    class="status success">
+
+                    No document selected
+
+                </p>
+
+            </div>
+
+                        <!-- ===========================
+                    CURRENT PDF
+            ============================ -->
+
+            <div class="card">
+
+                <div class="card-title">
+
+                    📁 Current PDF
+
+                </div>
+
+                <div class="pdf-card">
+
+                    <div class="pdf-icon">
+
+                        📄
+
+                    </div>
+
+                    <div>
+
+                        <h4 id="currentPdf">
+
+                            No document selected
+
+                        </h4>
+
+                        <span class="status ready">
+
+                            Ready
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ===========================
+                    AI TIPS
+            ============================ -->
+
+            <div class="card">
+
+                <div class="card-title">
+
+                    💡 Quick Tips
+
+                </div>
+
+                <ul class="tips">
+
+                    <li>
+                        Ask short and specific questions.
+                    </li>
+
+                    <li>
+                        Upload only one PDF at a time.
+                    </li>
+
+                    <li>
+                        AI answers only from uploaded PDF.
+                    </li>
+
+                    <li>
+                        Powered by Ollama + Llama 3.2
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+                <!-- ===========================
+                CHAT PANEL
+        ============================ -->
+
+        <section class="chat-section">
+
+            <!-- Chat Header -->
+
+            <div class="chat-header">
+
+                <div>
+
+                    <h2>
+
+                        AI Assistant
+
+                    </h2>
+
+                    <p>
+
+                        Ask questions about your uploaded document
+
+                    </p>
+
+                </div>
+
+                <div class="chat-status">
+
+                    <span class="status-dot"></span>
+
+                        Ready
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Chat Messages -->
+
+            <div id="chatBox">
+
+                <div class="welcome-card">
+
+                    <div class="welcome-icon">
+
+                        🤖
+
+                    </div>
+
+                    <h3>
+
+                        Welcome to AI PDF Assistant
+
+                    </h3>
+
+                    <p>
+
+                        Upload your document and ask questions using your private AI assistant.
+
+                    </p>
+
+                    <div class="welcome-tags">
+
+                        <span>Fast</span>
+
+                        <span>Private</span>
+
+                        <span>Offline AI</span>
+
+                        <span>RAG Powered</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+                        <!-- ===========================
+                    QUESTION AREA
+            ============================ -->
+
+            <div class="question-container">
+
+                <textarea
+                    id="question"
+                    placeholder="Ask anything about your uploaded PDF..."></textarea>
+
+                <button id="askBtn">
+
+                    Send
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ===========================
+            FOOTER
+    ============================ -->
+
+    <footer class="footer">
+
+        <div class="footer-left">
+
+            © 2026 AI PDF Assistant
+
+        </div>
+
+        <div class="footer-right">
+
+            Powered by FastAPI • ChromaDB • Ollama • Llama 3.2
+
+        </div>
+
+    </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
